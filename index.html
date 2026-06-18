@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brickley Automations — Simple systems for local businesses</title>
+  <meta name="description" content="Automation and web systems for small businesses on the North Shore of Massachusetts. Testimonial systems, lead capture, follow-up automation, and website improvements.">
+  <style>
+    :root {
+      --navy: #1B2A4A;
+      --blue: #185FA5;
+      --light-blue: #B5D4F4;
+      --info-bg: #E6F1FB;
+      --gray-bg: #F5F7FA;
+      --border: #E2E8F0;
+      --text: #2D3748;
+      --muted: #718096;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- Navigation ---------- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-brand {
+      color: var(--navy);
+      font-weight: 500;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover { color: var(--blue); }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      padding: 96px 0;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(181, 212, 244, 0.12);
+      color: var(--light-blue);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 600;
+      line-height: 1.15;
+      max-width: 720px;
+      margin-bottom: 24px;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--light-blue);
+      max-width: 620px;
+      margin-bottom: 36px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: opacity 0.15s ease;
+    }
+    .btn:hover { opacity: 0.9; }
+    .btn-white {
+      background: #fff;
+      color: var(--navy);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    /* ---------- Section shared ---------- */
+    section { padding: 88px 0; }
+    .label {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    h2 {
+      color: var(--navy);
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      max-width: 640px;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 8px;
+    }
+
+    /* ---------- About / Services ---------- */
+    .about p.intro {
+      color: var(--text);
+      font-size: 1.1rem;
+      max-width: 640px;
+      margin-bottom: 48px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--info-bg);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+    .card h3 {
+      color: var(--navy);
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* ---------- Work ---------- */
+    .work { background: var(--gray-bg); }
+    .project-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      margin-top: 36px;
+    }
+    .pill {
+      display: inline-block;
+      background: var(--info-bg);
+      color: var(--blue);
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+    .project-card h3 {
+      color: var(--navy);
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .project-card > p {
+      color: var(--text);
+      font-size: 1.02rem;
+      margin-bottom: 24px;
+    }
+    .detail-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .detail-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--info-bg);
+      color: var(--navy);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+    }
+    .detail-badge span.ic { color: var(--blue); }
+    .placeholder {
+      margin-top: 24px;
+      border: 1px dashed var(--light-blue);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      color: var(--muted);
+      background: #fff;
+      font-size: 0.95rem;
+    }
+
+    /* ---------- Contact ---------- */
+    .contact-box {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 48px;
+      margin-top: 40px;
+    }
+    .contact-box h3 {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .contact-box p {
+      color: var(--light-blue);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin-bottom: 28px;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+    }
+    footer .copyright { color: var(--text); font-size: 0.95rem; }
+    footer .built {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 760px) {
+      .hero { padding: 64px 0; }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1.05rem; }
+      section { padding: 60px 0; }
+      h2 { font-size: 1.6rem; }
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .contact-box { padding: 32px 24px; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links { gap: 18px; }
+      .nav-links a { font-size: 0.85rem; }
+      .nav-brand { font-size: 1rem; }
+      .hero-buttons { flex-direction: column; }
+      .hero-buttons .btn { justify-content: center; }
+    }
+
+    @media (max-width: 380px) {
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand">Brickley Automations</a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#work">My Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <div class="badge"><span>&#128205;</span> North Shore, Massachusetts</div>
+      <h1>Simple systems that help local businesses work smarter</h1>
+      <p>I build automation and web systems for small businesses — so you spend less time on repetitive tasks and more time on what matters.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-white">Get in touch</a>
+        <a href="#work" class="btn btn-outline">See my work</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About / Services -->
+  <section class="about" id="services">
+    <div class="container">
+      <p class="label">What I do</p>
+      <h2>Systems that save time and capture more customers</h2>
+      <p class="intro">I'm Luke — a 16-year-old developer based in Massachusetts. I build practical, reliable tools for local businesses at a fraction of agency prices.</p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon-box">&#9733;</div>
+          <h3>Testimonial &amp; review systems</h3>
+          <p>Let customers share their experience. You approve what goes live. Builds trust automatically.</p>
+        </div>
+        <div class="card">
+          <div class="icon-box">&#128276;</div>
+          <h3>Lead capture &amp; notifications</h3>
+          <p>Never miss an inquiry. Get notified instantly when a customer reaches out.</p>
+        </div>
+        <div class="card">
+          <div class="icon-box">&#8635;</div>
+          <h3>Follow-up automation</h3>
+          <p>Automatic messages keep leads warm so you don't lose jobs to slow response times.</p>
+        </div>
+        <div class="card">
+          <div class="icon-box">&#127758;</div>
+          <h3>Website improvements</h3>
+          <p>Contact forms, gallery pages, and simple upgrades that turn visitors into customers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section class="work" id="work">
+    <div class="container">
+      <p class="label">My work</p>
+      <h2>Real projects for real businesses</h2>
+      <p class="section-sub">Every project I take on is delivered, live, and used by actual customers.</p>
+
+      <div class="project-card">
+        <span class="pill">Salon &amp; beauty</span>
+        <h3>Testimonial gallery system — Beauty by Hilary, Reading MA</h3>
+        <p>Built a full testimonial and photo gallery system embedded directly into an existing salon website. Clients submit experiences through a form, the owner gets an instant email notification, and approved testimonials appear automatically on the public gallery.</p>
+        <div class="detail-badges">
+          <span class="detail-badge"><span class="ic">&#10003;</span> Live and in use</span>
+          <span class="detail-badge"><span class="ic">&#9993;</span> Instant email notifications</span>
+          <span class="detail-badge"><span class="ic">&#9783;</span> Embedded on existing site</span>
+        </div>
+      </div>
+
+      <div class="placeholder">&#10022; Client testimonial coming soon</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="label">Work with me</p>
+      <h2>Have a project in mind?</h2>
+      <p class="section-sub">I keep my prices low because I'm building my portfolio and reputation. You get real, hands-on work at a fair price.</p>
+
+      <div class="contact-box">
+        <h3>Let's talk about your business</h3>
+        <p>I'm based on the North Shore and work with local businesses across Massachusetts. Reach out and I'll get back to you within a day.</p>
+        <a href="mailto:lukebrickley009@gmail.com" class="btn btn-white"><span>&#9993;</span> lukebrickley009@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="copyright">&copy; 2025 Brickley Automations</div>
+    <div class="built"><span>&#128205;</span> Built on the North Shore, Massachusetts</div>
+  </footer>
+
+</body>
+</html>
