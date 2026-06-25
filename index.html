@@ -268,6 +268,44 @@
       margin-bottom: 28px;
     }
 
+    /* ---------- Testimonial (in Work section) ---------- */
+    .quote-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--blue);
+      border-radius: 14px;
+      padding: 36px;
+      margin-top: 36px;
+      max-width: 760px;
+    }
+    .quote-mark {
+      color: var(--light-blue);
+      font-size: 3rem;
+      line-height: 1;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .quote-card blockquote {
+      color: var(--text);
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .quote-attr {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .quote-attr strong {
+      color: var(--navy);
+      font-weight: 600;
+    }
+    .quote-attr a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    .quote-attr a:hover { text-decoration: underline; }
+
     /* ---------- Footer ---------- */
     footer {
       text-align: center;
@@ -385,7 +423,11 @@
         </div>
       </div>
 
-      <div class="placeholder">&#10022; Client testimonial coming soon</div>
+      <div class="quote-card">
+        <span class="quote-mark">&ldquo;</span>
+        <blockquote>If you're looking for tech support, I highly recommend working with Luke Brickley. He is driven, responsive, resourceful, and clearly committed to developing his skills as a young entrepreneur. Luke was a great help with my website, and I have no doubt he will be successful in whatever path he chooses.</blockquote>
+        <p class="quote-attr">&mdash; <strong>Hilary Cohen</strong>, <a href="https://beautybyhilary.com" target="_blank" rel="noopener">beautybyhilary.com</a></p>
+      </div>
     </div>
   </section>
 
