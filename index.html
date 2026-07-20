@@ -3,18 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brickley Automations — Simple systems for local businesses</title>
-  <meta name="description" content="Automation and web systems for small businesses on the North Shore of Massachusetts. Testimonial systems, lead capture, follow-up automation, and website improvements.">
+  <title>Brickley Automations | Websites, SEO &amp; Lead Systems for Local Businesses</title>
+  <meta name="description" content="Brickley Automations helps local businesses get more inquiries with better websites, local SEO, reviews, and follow-up systems.">
+  <meta name="theme-color" content="#14213D">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Brickley Automations | Websites, SEO &amp; Lead Systems for Local Businesses">
+  <meta property="og:description" content="Turn your website into a lead system. Better websites, local SEO, reviews, and faster follow-up for local businesses in North Reading, MA and beyond.">
+  <meta property="og:type" content="website">
+
   <style>
     :root {
-      --navy: #1B2A4A;
+      --navy: #14213D;
+      --navy-2: #1B2A4A;
       --blue: #185FA5;
+      --blue-bright: #2B7DE0;
       --light-blue: #B5D4F4;
       --info-bg: #E6F1FB;
       --gray-bg: #F5F7FA;
       --border: #E2E8F0;
       --text: #2D3748;
-      --muted: #718096;
+      --muted: #6B7688;
+      --radius: 16px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,324 +35,503 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
       color: var(--text);
       background: #fff;
-      line-height: 1.6;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
+    a { color: inherit; }
+
     .container {
-      max-width: 1080px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 0 24px;
     }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 14px 26px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1.5px solid transparent;
+      transition: transform 0.12s ease, box-shadow 0.15s ease, background 0.15s ease, opacity 0.15s ease;
+      line-height: 1;
+    }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover { background: var(--blue-bright); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(24, 95, 165, 0.28); }
+    .btn-white { background: #fff; color: var(--navy); }
+    .btn-white:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18); }
+    .btn-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,0.45); }
+    .btn-outline:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.8); }
+    .btn-ghost { background: #fff; color: var(--navy); border-color: var(--border); }
+    .btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
 
     /* ---------- Navigation ---------- */
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: saturate(180%) blur(8px);
       border-bottom: 1px solid var(--border);
     }
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 64px;
+      height: 68px;
+      gap: 16px;
     }
     .nav-brand {
       color: var(--navy);
-      font-weight: 500;
-      font-size: 1.1rem;
+      font-weight: 700;
+      font-size: 1.12rem;
       text-decoration: none;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
     }
     .nav-links {
       display: flex;
-      gap: 32px;
+      align-items: center;
+      gap: 28px;
     }
     .nav-links a {
       color: var(--text);
       text-decoration: none;
       font-size: 0.95rem;
+      font-weight: 500;
     }
     .nav-links a:hover { color: var(--blue); }
+    .nav-links .btn { padding: 10px 18px; font-size: 0.9rem; }
+    .nav-menu-links { display: flex; align-items: center; gap: 28px; }
 
     /* ---------- Hero ---------- */
     .hero {
-      background: var(--navy);
+      background:
+        radial-gradient(1100px 500px at 78% -10%, rgba(43, 125, 224, 0.30), transparent 60%),
+        linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
       color: #fff;
-      padding: 96px 0;
+      padding: 104px 0 92px;
     }
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(181, 212, 244, 0.12);
+      background: rgba(181, 212, 244, 0.14);
       color: var(--light-blue);
-      padding: 6px 14px;
+      padding: 7px 15px;
       border-radius: 999px;
       font-size: 0.85rem;
-      margin-bottom: 28px;
+      font-weight: 500;
+      margin-bottom: 26px;
+      border: 1px solid rgba(181, 212, 244, 0.18);
     }
     .hero h1 {
-      font-size: 2.75rem;
-      font-weight: 600;
-      line-height: 1.15;
-      max-width: 720px;
-      margin-bottom: 24px;
+      font-size: 3.35rem;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      max-width: 780px;
+      margin-bottom: 22px;
     }
-    .hero p {
-      font-size: 1.15rem;
-      color: var(--light-blue);
-      max-width: 620px;
-      margin-bottom: 36px;
+    .hero .lead {
+      font-size: 1.22rem;
+      color: #D9E6F6;
+      max-width: 660px;
+      margin-bottom: 34px;
     }
     .hero-buttons {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
+      margin-bottom: 40px;
     }
-    .btn {
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+    }
+    .trust-item {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 13px 26px;
-      border-radius: 8px;
-      font-size: 1rem;
+      gap: 9px;
+      color: #C7D6EA;
+      font-size: 0.94rem;
       font-weight: 500;
-      text-decoration: none;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: opacity 0.15s ease;
     }
-    .btn:hover { opacity: 0.9; }
-    .btn-white {
-      background: #fff;
-      color: var(--navy);
-    }
-    .btn-outline {
-      background: transparent;
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.5);
+    .trust-item .tick {
+      color: #7FE3B0;
+      font-weight: 700;
     }
 
     /* ---------- Section shared ---------- */
-    section { padding: 88px 0; }
+    section { padding: 92px 0; }
+    .section-head { max-width: 660px; margin-bottom: 44px; }
+    .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
     .label {
       color: var(--blue);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.09em;
       font-size: 0.8rem;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 14px;
     }
     h2 {
       color: var(--navy);
-      font-size: 2rem;
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 18px;
-      max-width: 640px;
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
     }
     .section-sub {
       color: var(--muted);
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin-bottom: 8px;
+      font-size: 1.12rem;
     }
+    .bg-gray { background: var(--gray-bg); }
 
-    /* ---------- About / Services ---------- */
-    .about p.intro {
-      color: var(--text);
-      font-size: 1.1rem;
-      max-width: 640px;
-      margin-bottom: 48px;
+    /* ---------- Lead capture form ---------- */
+    .review {
+      background:
+        radial-gradient(900px 420px at 12% 0%, rgba(43, 125, 224, 0.22), transparent 60%),
+        linear-gradient(160deg, var(--navy-2) 0%, var(--navy) 100%);
+      color: #fff;
     }
-    .cards {
+    .review-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .review h2 { color: #fff; }
+    .review .review-copy p { color: #D9E6F6; font-size: 1.08rem; margin-bottom: 20px; }
+    .review-copy .mini {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .review-copy .mini li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #C7D6EA;
+      font-size: 0.98rem;
+    }
+    .review-copy .mini .tick { color: #7FE3B0; font-weight: 700; }
+
+    .form-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 24px 60px rgba(10, 22, 44, 0.30);
+    }
+    .form-row { margin-bottom: 16px; }
+    .form-row.two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form-card label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .form-card input,
+    .form-card textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.98rem;
+      font-family: inherit;
+      color: var(--text);
+      background: #fff;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .form-card input:focus,
+    .form-card textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(24, 95, 165, 0.14);
+    }
+    .form-card textarea { resize: vertical; min-height: 96px; }
+    .form-card .btn { width: 100%; margin-top: 4px; }
+    .form-note { font-size: 0.82rem; color: var(--muted); margin-top: 12px; text-align: center; }
+    .form-status { font-size: 0.9rem; margin-top: 12px; text-align: center; color: var(--blue); font-weight: 600; min-height: 1.2em; }
+
+    /* ---------- Problem ---------- */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 8px;
+    }
+    .problem-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 22px 22px 22px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .problem-item .x {
+      flex: 0 0 auto;
+      width: 30px; height: 30px;
+      border-radius: 8px;
+      background: #FDECEC;
+      color: #D14343;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .problem-item p { color: var(--text); font-size: 0.98rem; }
+
+    /* ---------- Card grids ---------- */
+    .grid {
+      display: grid;
       gap: 20px;
     }
+    .grid-5 { grid-template-columns: repeat(5, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+
     .card {
       background: #fff;
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
+      border-radius: var(--radius);
+      padding: 26px 24px;
+      transition: transform 0.14s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 34px rgba(20, 33, 61, 0.10);
+      border-color: #D3E0F0;
     }
     .icon-box {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
+      width: 46px; height: 46px;
+      border-radius: 12px;
       background: var(--info-bg);
       color: var(--blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.35rem;
       margin-bottom: 16px;
     }
     .card h3 {
       color: var(--navy);
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 8px;
+      font-size: 1.08rem;
+      font-weight: 700;
+      margin-bottom: 9px;
+      letter-spacing: -0.01em;
     }
-    .card p {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
+    .card p { color: var(--muted); font-size: 0.94rem; }
 
-    /* ---------- Work ---------- */
-    .work { background: var(--gray-bg); }
-    .project-card {
+    /* ---------- What I build ---------- */
+    .build-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .build-item {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
       background: #fff;
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 32px;
-      margin-top: 36px;
+      border-radius: 12px;
+      padding: 18px 20px;
     }
+    .build-item .dot {
+      flex: 0 0 auto;
+      width: 32px; height: 32px;
+      border-radius: 9px;
+      background: var(--info-bg);
+      color: var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .build-item h3 { font-size: 1rem; color: var(--navy); font-weight: 700; margin-bottom: 3px; }
+    .build-item p { font-size: 0.9rem; color: var(--muted); }
+
+    /* ---------- Proof ---------- */
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+    .proof-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+    .proof-card.feature { border-left: 3px solid var(--blue); }
     .pill {
       display: inline-block;
       background: var(--info-bg);
       color: var(--blue);
-      padding: 5px 14px;
+      padding: 5px 13px;
       border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 500;
-      margin-bottom: 18px;
-    }
-    .project-card h3 {
-      color: var(--navy);
-      font-size: 1.35rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
+      align-self: flex-start;
     }
-    .project-card > p {
-      color: var(--text);
-      font-size: 1.02rem;
-      margin-bottom: 24px;
-    }
-    .detail-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .detail-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--info-bg);
-      color: var(--navy);
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 0.88rem;
-    }
-    .detail-badge span.ic { color: var(--blue); }
-    .placeholder {
-      margin-top: 24px;
-      border: 1px dashed var(--light-blue);
-      border-radius: 12px;
-      padding: 28px;
-      text-align: center;
+    .quote-mark { color: var(--light-blue); font-size: 2.6rem; line-height: 0.4; font-weight: 800; display: block; margin-bottom: 14px; }
+    .proof-card blockquote { color: var(--text); font-size: 1.08rem; line-height: 1.7; margin-bottom: 20px; }
+    .quote-attr { color: var(--muted); font-size: 0.94rem; margin-top: auto; }
+    .quote-attr strong { color: var(--navy); font-weight: 700; }
+    .quote-attr a { color: var(--blue); text-decoration: none; font-weight: 600; }
+    .quote-attr a:hover { text-decoration: underline; }
+    .project-summary {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
       color: var(--muted);
-      background: #fff;
-      font-size: 0.95rem;
     }
+    .project-summary a { color: var(--blue); font-weight: 600; text-decoration: none; }
+    .project-summary a:hover { text-decoration: underline; }
 
-    /* ---------- Contact ---------- */
-    .contact-box {
-      background: var(--navy);
-      border-radius: 16px;
-      padding: 48px;
-      margin-top: 40px;
+    .proof-card.soon {
+      background: var(--gray-bg);
+      border: 1px dashed #CBD7E6;
+      justify-content: center;
     }
-    .contact-box h3 {
-      color: #fff;
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 14px;
+    .proof-card.soon .soon-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 12px;
     }
-    .contact-box p {
-      color: var(--light-blue);
-      font-size: 1.05rem;
-      max-width: 560px;
-      margin-bottom: 28px;
-    }
+    .proof-card.soon h3 { color: var(--navy); font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+    .proof-card.soon p { color: var(--muted); font-size: 0.92rem; }
 
-    /* ---------- Testimonial (in Work section) ---------- */
-    .quote-card {
+    /* ---------- Process ---------- */
+    .step {
       background: #fff;
       border: 1px solid var(--border);
-      border-left: 3px solid var(--blue);
-      border-radius: 14px;
-      padding: 36px;
-      margin-top: 36px;
-      max-width: 760px;
+      border-radius: var(--radius);
+      padding: 28px 26px;
     }
-    .quote-mark {
-      color: var(--light-blue);
-      font-size: 3rem;
-      line-height: 1;
-      font-weight: 700;
-      display: block;
-      margin-bottom: 8px;
+    .step .num {
+      width: 40px; height: 40px;
+      border-radius: 11px;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.05rem;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
     }
-    .quote-card blockquote {
-      color: var(--text);
-      font-size: 1.15rem;
-      line-height: 1.7;
-      margin-bottom: 24px;
+    .step h3 { color: var(--navy); font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+    .step p { color: var(--muted); font-size: 0.96rem; }
+
+    /* ---------- Pricing ---------- */
+    .pricing-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 780px;
+      margin: 0 auto;
+      box-shadow: 0 14px 40px rgba(20, 33, 61, 0.06);
     }
-    .quote-attr {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-    .quote-attr strong {
+    .price-lead {
+      font-size: 1.35rem;
       color: var(--navy);
-      font-weight: 600;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
     }
-    .quote-attr a {
-      color: var(--blue);
-      text-decoration: none;
+    .price-lead .accent { color: var(--blue); }
+    .pricing-card .sub { color: var(--muted); font-size: 1.02rem; margin-bottom: 26px; }
+    .price-points {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 24px;
+      margin-bottom: 28px;
     }
-    .quote-attr a:hover { text-decoration: underline; }
+    .price-points li { display: flex; gap: 10px; align-items: flex-start; color: var(--text); font-size: 0.98rem; }
+    .price-points .tick { color: var(--blue); font-weight: 700; }
+
+    /* ---------- Final CTA ---------- */
+    .final-cta {
+      background:
+        radial-gradient(800px 400px at 85% 120%, rgba(43, 125, 224, 0.30), transparent 60%),
+        linear-gradient(160deg, var(--navy-2) 0%, var(--navy) 100%);
+      color: #fff;
+      border-radius: 22px;
+      padding: 58px 48px;
+      text-align: center;
+      margin-top: 8px;
+    }
+    .final-cta h2 { color: #fff; max-width: 680px; margin: 0 auto 16px; }
+    .final-cta p { color: #D9E6F6; font-size: 1.1rem; max-width: 560px; margin: 0 auto 30px; }
+    .final-cta .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .final-cta .contact-line { margin-top: 26px; color: #B9C9DE; font-size: 0.95rem; }
+    .final-cta .contact-line a { color: #fff; text-decoration: none; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.4); }
 
     /* ---------- Footer ---------- */
     footer {
       text-align: center;
-      padding: 40px 24px;
+      padding: 44px 24px;
       border-top: 1px solid var(--border);
     }
-    footer .copyright { color: var(--text); font-size: 0.95rem; }
+    footer .brand { color: var(--navy); font-weight: 700; font-size: 1.02rem; margin-bottom: 8px; }
+    footer .foot-links { margin: 4px 0 10px; }
+    footer .foot-links a { color: var(--blue); text-decoration: none; font-size: 0.92rem; font-weight: 500; }
+    footer .foot-links a:hover { text-decoration: underline; }
     footer .built {
       color: var(--muted);
       font-size: 0.88rem;
-      margin-top: 6px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
     }
+    footer .copyright { color: var(--muted); font-size: 0.82rem; margin-top: 8px; }
 
     /* ---------- Responsive ---------- */
+    @media (max-width: 980px) {
+      .grid-5 { grid-template-columns: repeat(3, 1fr); }
+      .proof-grid { grid-template-columns: 1fr; }
+      .review-grid { grid-template-columns: 1fr; gap: 34px; }
+    }
+    @media (max-width: 860px) {
+      .nav-menu-links { display: none; }
+      .hero h1 { font-size: 2.5rem; }
+      .hero .lead { font-size: 1.1rem; }
+    }
     @media (max-width: 760px) {
-      .hero { padding: 64px 0; }
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1.05rem; }
-      section { padding: 60px 0; }
-      h2 { font-size: 1.6rem; }
-      .cards { grid-template-columns: repeat(2, 1fr); }
-      .contact-box { padding: 32px 24px; }
+      section { padding: 64px 0; }
+      .hero { padding: 76px 0 64px; }
+      h2 { font-size: 1.8rem; }
+      .grid-5, .grid-3 { grid-template-columns: 1fr 1fr; }
+      .price-points { grid-template-columns: 1fr; }
+      .final-cta { padding: 44px 24px; }
+      .pricing-card { padding: 30px 24px; }
     }
-
-    @media (max-width: 480px) {
-      .nav-links { gap: 18px; }
-      .nav-links a { font-size: 0.85rem; }
-      .nav-brand { font-size: 1rem; }
-      .hero-buttons { flex-direction: column; }
-      .hero-buttons .btn { justify-content: center; }
-    }
-
-    @media (max-width: 380px) {
-      .nav-links { display: none; }
+    @media (max-width: 520px) {
+      .hero h1 { font-size: 2.05rem; }
+      .grid-5, .grid-3 { grid-template-columns: 1fr; }
+      .form-row.two { grid-template-columns: 1fr; }
+      .hero-buttons .btn, .final-cta .cta-buttons .btn { width: 100%; }
+      .nav-links .btn { display: none; }
     }
   </style>
 </head>
@@ -351,106 +540,315 @@
   <!-- Navigation -->
   <nav>
     <div class="container nav-inner">
-      <a href="#" class="nav-brand">Brickley Automations</a>
+      <a href="#top" class="nav-brand">Brickley Automations</a>
       <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#work">My Work</a>
-        <a href="#contact">Contact</a>
+        <div class="nav-menu-links">
+          <a href="#lead-system">The Lead System</a>
+          <a href="#build">What I Build</a>
+          <a href="#proof">Proof</a>
+          <a href="#pricing">Pricing</a>
+        </div>
+        <a href="#review" class="btn btn-primary">Free Website Review</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero -->
-  <header class="hero">
+  <header class="hero" id="top">
     <div class="container">
-      <div class="badge"><span>&#128205;</span> North Shore, Massachusetts</div>
-      <h1>Simple systems that help local businesses work smarter</h1>
-      <p>I build automation and web systems for small businesses — so you spend less time on repetitive tasks and more time on what matters.</p>
+      <div class="badge"><span>&#128205;</span> North Reading, MA &middot; Local businesses across Massachusetts</div>
+      <h1>Turn your website into a lead system.</h1>
+      <p class="lead">Brickley Automations helps local businesses get more inquiries, respond faster, build trust with reviews, and book more work through better websites, SEO, and follow-up systems.</p>
       <div class="hero-buttons">
-        <a href="#contact" class="btn btn-white">Get in touch</a>
-        <a href="#work" class="btn btn-outline">See my work</a>
+        <a href="#review" class="btn btn-white">Get a Free Website Review</a>
+        <a href="#build" class="btn btn-outline">See What I Build</a>
+      </div>
+      <div class="trust-row">
+        <span class="trust-item"><span class="tick">&#10003;</span> Local founder</span>
+        <span class="trust-item"><span class="tick">&#10003;</span> Done-for-you setup</span>
+        <span class="trust-item"><span class="tick">&#10003;</span> Simple systems that get you leads</span>
+        <span class="trust-item"><span class="tick">&#10003;</span> No bloated agency process</span>
       </div>
     </div>
   </header>
 
-  <!-- About / Services -->
-  <section class="about" id="services">
+  <!-- Lead capture / website review -->
+  <section class="review" id="review">
     <div class="container">
-      <p class="label">What I do</p>
-      <h2>Systems that save time and capture more customers</h2>
-      <p class="intro">I'm Luke — a 16-year-old developer based in Massachusetts. I build practical, reliable tools for local businesses at a fraction of agency prices.</p>
+      <div class="review-grid">
+        <div class="review-copy">
+          <p class="label" style="color: var(--light-blue);">Start here</p>
+          <h2>Get a free website review.</h2>
+          <p>Tell me about your business and I'll take a real look at your website, reviews, local SEO, and how you capture leads &mdash; then send back a few clear, practical things you could improve.</p>
+          <ul class="mini">
+            <li><span class="tick">&#10003;</span> No cost and no obligation</li>
+            <li><span class="tick">&#10003;</span> Straight answers from a local founder, not a sales pitch</li>
+            <li><span class="tick">&#10003;</span> Usually back to you within a day</li>
+          </ul>
+        </div>
 
-      <div class="cards">
+        <form class="form-card" id="reviewForm" novalidate>
+          <div class="form-row two">
+            <div>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@email.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="business">Business name</label>
+            <input type="text" id="business" name="business" placeholder="Your business">
+          </div>
+          <div class="form-row">
+            <label for="website">Website URL</label>
+            <input type="text" id="website" name="website" placeholder="yourbusiness.com">
+          </div>
+          <div class="form-row">
+            <label for="help">What do you want help with?</label>
+            <textarea id="help" name="help" placeholder="e.g. more inquiries, better reviews, faster follow-up, a website refresh…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Request Review</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          <p class="form-note">Prefer email? Reach me directly at <a href="mailto:lukebrickley009@gmail.com" style="color: var(--blue); font-weight:600;">lukebrickley009@gmail.com</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section id="problem">
+    <div class="container">
+      <div class="section-head">
+        <p class="label">The problem</p>
+        <h2>Most local business websites don't pull their weight.</h2>
+        <p class="section-sub">They usually look fine. The issue is what happens after someone lands on them &mdash; that's where inquiries quietly slip away.</p>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-item"><span class="x">&times;</span><p>Looks okay, but doesn't consistently turn visitors into inquiries.</p></div>
+        <div class="problem-item"><span class="x">&times;</span><p>Makes it harder than it should be for people to contact or book.</p></div>
+        <div class="problem-item"><span class="x">&times;</span><p>Doesn't show enough reviews or testimonials to build trust fast.</p></div>
+        <div class="problem-item"><span class="x">&times;</span><p>Weak local SEO, so nearby customers don't find it on Google.</p></div>
+        <div class="problem-item"><span class="x">&times;</span><p>Leads go cold because follow-up is slow or inconsistent.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Lead System -->
+  <section class="bg-gray" id="lead-system">
+    <div class="container">
+      <div class="section-head center">
+        <p class="label">The lead system</p>
+        <h2>The pieces that actually bring in work.</h2>
+        <p class="section-sub">Five simple building blocks that turn a website from an online brochure into something that brings you inquiries.</p>
+      </div>
+      <div class="grid grid-5">
         <div class="card">
-          <div class="icon-box">&#9733;</div>
-          <h3>Testimonial &amp; review systems</h3>
-          <p>Let customers share their experience. You approve what goes live. Builds trust automatically.</p>
+          <div class="icon-box">&#9673;</div>
+          <h3>Website That Converts</h3>
+          <p>Clear pages, mobile-friendly design, and strong calls-to-action with contact forms &mdash; so more visitors actually reach out.</p>
         </div>
         <div class="card">
-          <div class="icon-box">&#128276;</div>
-          <h3>Lead capture &amp; notifications</h3>
-          <p>Never miss an inquiry. Get notified instantly when a customer reaches out.</p>
+          <div class="icon-box">&#128205;</div>
+          <h3>Local SEO Foundation</h3>
+          <p>Better page structure, titles, descriptions, and local keywords so nearby customers find you on Google.</p>
+        </div>
+        <div class="card">
+          <div class="icon-box">&#9733;</div>
+          <h3>Reviews &amp; Testimonials</h3>
+          <p>Collect and display real proof, so new visitors trust your business faster and feel confident booking.</p>
+        </div>
+        <div class="card">
+          <div class="icon-box">&#128229;</div>
+          <h3>Lead Capture Forms</h3>
+          <p>Make it easy to inquire, request a quote, book, or ask a question &mdash; without the visitor giving up halfway.</p>
         </div>
         <div class="card">
           <div class="icon-box">&#8635;</div>
-          <h3>Follow-up automation</h3>
-          <p>Automatic messages keep leads warm so you don't lose jobs to slow response times.</p>
-        </div>
-        <div class="card">
-          <div class="icon-box">&#127758;</div>
-          <h3>Website improvements</h3>
-          <p>Contact forms, gallery pages, and simple upgrades that turn visitors into customers.</p>
+          <h3>Follow-Up Systems</h3>
+          <p>Respond faster with instant notifications and follow-ups, so fewer leads slip through the cracks.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Work -->
-  <section class="work" id="work">
+  <!-- What I Build -->
+  <section id="build">
     <div class="container">
-      <p class="label">My work</p>
-      <h2>Real projects for real businesses</h2>
-      <p class="section-sub">Every project I take on is delivered, live, and used by actual customers.</p>
-
-      <div class="project-card">
-        <span class="pill">Salon &amp; beauty</span>
-        <h3>Testimonial gallery system — Beauty by Hilary, Reading MA</h3>
-        <p>Built a full testimonial and photo gallery system embedded directly into an existing salon website. Clients submit experiences through a form, the owner gets an instant email notification, and approved testimonials appear automatically on the public gallery.</p>
-        <div class="detail-badges">
-          <span class="detail-badge"><span class="ic">&#10003;</span> Live and in use</span>
-          <span class="detail-badge"><span class="ic">&#9993;</span> Instant email notifications</span>
-          <span class="detail-badge"><span class="ic">&#9783;</span> Embedded on existing site</span>
-        </div>
+      <div class="section-head">
+        <p class="label">What I build</p>
+        <h2>Real, done-for-you pieces &mdash; not vague "automation."</h2>
+        <p class="section-sub">Concrete things I set up for local businesses, built around what you actually need.</p>
       </div>
-
-      <div class="quote-card">
-        <span class="quote-mark">&ldquo;</span>
-        <blockquote>If you're looking for tech support, I highly recommend working with Luke Brickley. He is driven, responsive, resourceful, and clearly committed to developing his skills as a young entrepreneur. Luke was a great help with my website, and I have no doubt he will be successful in whatever path he chooses.</blockquote>
-        <p class="quote-attr">&mdash; <strong>Hilary Cohen</strong>, <a href="https://beautybyhilary.com" target="_blank" rel="noopener">beautybyhilary.com</a></p>
+      <div class="build-grid">
+        <div class="build-item"><span class="dot">&#9998;</span><div><h3>Website refreshes &amp; redesigns</h3><p>Cleaner, faster, mobile-first pages that guide visitors to act.</p></div></div>
+        <div class="build-item"><span class="dot">&#128229;</span><div><h3>Contact forms with instant alerts</h3><p>Every inquiry lands in your inbox the moment it's sent.</p></div></div>
+        <div class="build-item"><span class="dot">&#9733;</span><div><h3>Testimonial &amp; review galleries</h3><p>Collect, approve, and display customer proof automatically.</p></div></div>
+        <div class="build-item"><span class="dot">&#128269;</span><div><h3>Local SEO cleanup</h3><p>Titles, descriptions, structure, and local keywords tidied up.</p></div></div>
+        <div class="build-item"><span class="dot">&#128197;</span><div><h3>Booking &amp; inquiry pages</h3><p>Direct booking/inquiry pages for service businesses and property managers.</p></div></div>
+        <div class="build-item"><span class="dot">&#8635;</span><div><h3>Follow-up workflows</h3><p>Automatic replies and reminders so leads stay warm.</p></div></div>
+        <div class="build-item"><span class="dot">&#128202;</span><div><h3>Simple business dashboards</h3><p>A clear view of inquiries and reviews, when it's useful.</p></div></div>
+        <div class="build-item"><span class="dot">&#9993;</span><div><h3>Notifications &amp; routing</h3><p>The right message to the right place, right away.</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section class="contact" id="contact">
+  <!-- Proof -->
+  <section class="bg-gray" id="proof">
     <div class="container">
-      <p class="label">Work with me</p>
-      <h2>Have a project in mind?</h2>
-      <p class="section-sub">I keep my prices low because I'm building my portfolio and reputation. You get real, hands-on work at a fair price.</p>
+      <div class="section-head">
+        <p class="label">Case studies</p>
+        <h2>Proof from real projects.</h2>
+        <p class="section-sub">Every project I take on is delivered, live, and used by actual customers &mdash; no stock quotes, no fake results.</p>
+      </div>
+      <div class="proof-grid">
 
-      <div class="contact-box">
-        <h3>Let's talk about your business</h3>
-        <p>I'm based on the North Shore and work with local businesses across Massachusetts. Reach out and I'll get back to you within a day.</p>
-        <a href="mailto:lukebrickley009@gmail.com" class="btn btn-white"><span>&#9993;</span> lukebrickley009@gmail.com</a>
+        <div class="proof-card feature">
+          <span class="pill">Salon &amp; beauty &middot; Reading, MA</span>
+          <span class="quote-mark">&ldquo;</span>
+          <blockquote>If you're looking for tech support, I highly recommend working with Luke Brickley. He is driven, responsive, resourceful, and clearly committed to developing his skills as a young entrepreneur. Luke was a great help with my website, and I have no doubt he will be successful in whatever path he chooses.</blockquote>
+          <p class="quote-attr">&mdash; <strong>Hilary Cohen</strong>, <a href="https://beautybyhilary.com" target="_blank" rel="noopener">beautybyhilary.com</a></p>
+          <div class="project-summary">
+            <strong>Project:</strong> Testimonial &amp; review system for a Reading salon &mdash; clients submit their experience through a form, the owner gets an instant email notification, and approved testimonials appear automatically on the site.
+            <br><a href="https://hilary.brickleyautomations.com" target="_blank" rel="noopener">View the live system &rarr;</a>
+          </div>
+        </div>
+
+        <div class="proof-card soon">
+          <span class="soon-tag">Coming soon</span>
+          <h3>Local SEO project</h3>
+          <p>A local SEO cleanup for a nearby service business &mdash; sharper titles, descriptions, and structure to improve Google visibility. In progress.</p>
+        </div>
+
+        <div class="proof-card soon">
+          <span class="soon-tag">Coming soon</span>
+          <h3>Property management website</h3>
+          <p>A website with direct inquiry and booking pages for a property manager, built to capture and route leads. In progress.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process">
+    <div class="container">
+      <div class="section-head center">
+        <p class="label">How it works</p>
+        <h2>A simple, three-step process.</h2>
+        <p class="section-sub">Straightforward, founder-led, and built around your business &mdash; no drawn-out agency runaround.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Quick Review</h3>
+          <p>I look at your website, SEO, reviews, and lead capture setup, and pinpoint what's costing you inquiries.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Build the System</h3>
+          <p>I improve the pages, forms, reviews, and follow-up pieces that matter most for your business.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Launch &amp; Improve</h3>
+          <p>We go live, check that everything works, and make small improvements over time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="bg-gray" id="pricing">
+    <div class="container">
+      <div class="section-head center">
+        <p class="label">Pricing</p>
+        <h2>Simple, clear starting points.</h2>
+        <p class="section-sub">No bloated retainers &mdash; just fair pricing built around what your business actually needs.</p>
+      </div>
+      <div class="pricing-card">
+        <p class="price-lead">Starter projects typically begin around <span class="accent">$300&ndash;$800</span>, depending on scope.</p>
+        <p class="sub">Monthly hosting and maintenance are available for businesses that want ongoing support &mdash; but they're optional, never required.</p>
+        <ul class="price-points">
+          <li><span class="tick">&#10003;</span> Simple setup, handled for you</li>
+          <li><span class="tick">&#10003;</span> Clear pricing, agreed up front</li>
+          <li><span class="tick">&#10003;</span> No bloated retainers or lock-in</li>
+          <li><span class="tick">&#10003;</span> Built around what you actually need</li>
+        </ul>
+        <a href="#review" class="btn btn-primary">Get a Free Website Review</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="contact">
+    <div class="container">
+      <div class="final-cta">
+        <h2>Want to see what your website could be doing better?</h2>
+        <p>Send me a few details and I'll take a real look &mdash; then share a few clear, practical things you could improve. Based in North Reading, MA and working with local businesses across Massachusetts.</p>
+        <div class="cta-buttons">
+          <a href="#review" class="btn btn-white">Request a Free Website Review</a>
+          <a href="mailto:lukebrickley009@gmail.com" class="btn btn-outline"><span>&#9993;</span> Email me directly</a>
+        </div>
+        <p class="contact-line">Or reach me anytime at <a href="mailto:lukebrickley009@gmail.com">lukebrickley009@gmail.com</a></p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="copyright">&copy; 2025 Brickley Automations</div>
-    <div class="built"><span>&#128205;</span> Built on the North Shore, Massachusetts</div>
+    <div class="brand">Brickley Automations</div>
+    <div class="foot-links">
+      <a href="#lead-system">The Lead System</a> &nbsp;&middot;&nbsp;
+      <a href="#build">What I Build</a> &nbsp;&middot;&nbsp;
+      <a href="#proof">Proof</a> &nbsp;&middot;&nbsp;
+      <a href="#review">Free Review</a>
+    </div>
+    <div class="built"><span>&#128205;</span> Built in North Reading, Massachusetts</div>
+    <div class="copyright">&copy; 2025 Brickley Automations. All rights reserved.</div>
   </footer>
+
+  <script>
+    // No backend yet: compose a pre-filled email from the review form.
+    // Replace this with a real form endpoint (Formspree / Netlify Forms / custom) later.
+    (function () {
+      var form = document.getElementById('reviewForm');
+      var status = document.getElementById('formStatus');
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var name = (document.getElementById('name').value || '').trim();
+        var email = (document.getElementById('email').value || '').trim();
+        var business = (document.getElementById('business').value || '').trim();
+        var website = (document.getElementById('website').value || '').trim();
+        var help = (document.getElementById('help').value || '').trim();
+
+        if (!name || !email) {
+          status.textContent = 'Please add your name and email so I can reply.';
+          return;
+        }
+
+        var subject = 'Website review request — ' + (business || name);
+        var body =
+          'Name: ' + name + '\n' +
+          'Email: ' + email + '\n' +
+          'Business: ' + (business || '—') + '\n' +
+          'Website: ' + (website || '—') + '\n\n' +
+          'What they want help with:\n' + (help || '—');
+
+        window.location.href =
+          'mailto:lukebrickley009@gmail.com' +
+          '?subject=' + encodeURIComponent(subject) +
+          '&body=' + encodeURIComponent(body);
+
+        status.textContent = 'Opening your email app… if nothing happens, email lukebrickley009@gmail.com directly.';
+      });
+    })();
+  </script>
 
 </body>
 </html>
